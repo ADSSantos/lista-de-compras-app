@@ -193,5 +193,4 @@ function ClickEventToCheckBox() {
         };
     });
 }
-
 document.addEventListener("DOMContentLoaded", ClickEventToCheckBox);
