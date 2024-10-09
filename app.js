@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Contador de itens _________________________________________________________
   
   // Função para adicionar span após cada label dinamicamente
-  // Função para adicionar span após cada label dinamicament
+ 
   
   const labels = document.querySelectorAll("label");
   
