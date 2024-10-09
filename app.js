@@ -156,46 +156,48 @@ document.getElementById('barra-pesquisa').addEventListener('keyup', function(eve
                 }
             });
 
- 
+
+
 // Contador de itens _________________________________________________________
 
 // Função para adicionar span após cada label dinamicamente
             // Função para adicionar span após cada label dinamicament
  
-const labels = document.querySelectorAll('label');
+            const labels = document.querySelectorAll('label');
 
-labels.forEach(function(label) {
-    const span = document.createElement("span");
-    span.className = "quantity";
-    span.textContent = "";
-    label.insertAdjacentElement('afterend', span);
-    console.log("Deu certo adiconar o span apos a label");
+            labels.forEach(function(label) {
+                const span = document.createElement("span");
+                span.className = "quantity";
+                span.textContent = "";
+                label.insertAdjacentElement('afterend', span);
+                console.log("Deu certo adiconar o span apos a label");
+            
+            
+            });
+            //Função para criar O Pop-up ao clicar na box
+            function askQuantity(checkbox) {
+                const quantitySpan = checkbox.nextElementSibling.nextElementSibling;
+            
+            
+                if(checkbox.checked) {
+                    const quantity = prompt("Quantos você gostaria de comprar?");
+                    if(quantity !== null && quantity.trim() !== "") {
+                        quantitySpan.textContent = ` - Quantidade: ${quantity}`;
+                    } else{
+                        checkbox.checked = false;
+                    }
+                } else {
+                    quantitySpan.textContent = "";
+                }
+            }
+            // EventeListener para saber se as checkbox foram clicadas ou não
+            function ClickEventToCheckBox() {
+                const checkbox = document.querySelectorAll('input[type="checkbox"]');
+                checkbox.forEach(function(checkbox){
+                    checkbox.onclick = function() {
+                        askQuantity(checkbox);
+                    };
+                });
+            }
+            document.addEventListener("DOMContentLoaded", ClickEventToCheckBox);
 
-
-});
-//Função para criar O Pop-up ao clicar na box
-function askQuantity(checkbox) {
-    const quantitySpan = checkbox.nextElementSibling.nextElementSibling;
-
-
-    if(checkbox.checked) {
-        const quantity = prompt("Quantos você gostaria de comprar?");
-        if(quantity !== null && quantity.trim() !== "") {
-            quantitySpan.textContent = ` - Quantidade: ${quantity}`;
-        } else{
-            checkbox.checked = false;
-        }
-    } else {
-        quantitySpan.textContent = "";
-    }
-}
-// EventeListener para saber se as checkbox foram clicadas ou não
-function ClickEventToCheckBox() {
-    const checkbox = document.querySelectorAll('input[type="checkbox"]');
-    checkbox.forEach(function(checkbox){
-        checkbox.onclick = function() {
-            askQuantity(checkbox);
-        };
-    });
-}
-document.addEventListener("DOMContentLoaded", ClickEventToCheckBox);
