@@ -108,10 +108,12 @@ document.getElementById('pesquisar').addEventListener('click', function(){
     }
 });
 
-
+// Recebe oque estiver escrito no input
 function pesquisar(){ 
-    const termoPesquisa = document.getElementById('barra-pesquisa').value.toLowerCase(); // Recebe oque estiver escrito no input
-    const itens = document.querySelectorAll('.labelcheck');// cria um vetor que recebe todos os itens que estao na classe labecheck (usei o Labelcheck porque é uma classe que está em todos os itens)
+    const termoPesquisa = document.getElementById('barra-pesquisa').value.toLowerCase().trim
+    (); 
+    // cria um vetor que recebe todos os itens que estao na classe labecheck (usei o Labelcheck porque é uma classe que está em todos os itens)
+    const itens = document.querySelectorAll('.labelcheck');
     let found = false;
     
 
@@ -154,9 +156,12 @@ document.getElementById('barra-pesquisa').addEventListener('keyup', function(eve
                 }
             });
 
+ 
 // Contador de itens _________________________________________________________
 
 // Função para adicionar span após cada label dinamicamente
+            // Função para adicionar span após cada label dinamicament
+ 
 const labels = document.querySelectorAll('label');
 
 labels.forEach(function(label) {
