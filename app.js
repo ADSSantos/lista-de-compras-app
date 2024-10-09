@@ -180,7 +180,7 @@ document.getElementById('barra-pesquisa').addEventListener('keyup', function(eve
             
             
                 if(checkbox.checked) {
-                    const quantity = prompt("Quantos você gostaria de comprar?");
+                    const quantity = prompt("Quantidade de itens?");
                     if(quantity !== null && quantity.trim() !== "") {
                         quantitySpan.textContent = ` - Quantidade: ${quantity}`;
                     } else{
